@@ -20,6 +20,8 @@ buildscript {
         def livedata_version = '2.2.0-rc02'
         def navigation_version = '2.2.2'
 
+        def mediax = '1.1.0-alpha01'
+
         def junit_version = '4.12'
 
         def android_junit_version = '1.1.1'
@@ -38,7 +40,12 @@ buildscript {
                 "androidx.appcompat:appcompat:$appcompat_version",
                 "com.google.android.material:material:$material_version",
                 "androidx.constraintlayout:constraintlayout:$constraint_layout_version",
-                "androidx.fragment:fragment-ktx:$ktx_fragment"
+                "androidx.fragment:fragment-ktx:$ktx_fragment",
+
+                // Media X
+                "androidx.media2:media2-session:$mediax",
+                "androidx.media2:media2-widget:$mediax",
+                "androidx.media2:media2-player:$mediax"
         ]
 
         arch_libraries = [
