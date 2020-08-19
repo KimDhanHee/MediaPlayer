@@ -16,11 +16,11 @@ object MediaLibrary {
 
       while (first && cursor.moveToNext()) {
         val uri = ringtoneManager.getRingtoneUri(cursor.position)
-        val retreiver = MediaMetadataRetriever().apply { setDataSource(context, uri) }
+        val retriever = MediaMetadataRetriever().apply { setDataSource(context, uri) }
         val title =
-          retreiver.extractMetadata(MediaMetadataRetriever.METADATA_KEY_TITLE) ?: "unknown"
+          retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_TITLE) ?: "unknown"
         val duration =
-          retreiver.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION).toLong()
+          retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION).toLong()
 
         add(
           UriMediaItem.Builder(uri)
