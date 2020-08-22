@@ -22,6 +22,8 @@ buildscript {
 
         def mediax = '1.1.0-alpha01'
 
+        def glide = '4.11.0'
+
         def junit_version = '4.12'
 
         def android_junit_version = '1.1.1'
@@ -45,7 +47,10 @@ buildscript {
                 // Media X
                 "androidx.media2:media2-session:$mediax",
                 "androidx.media2:media2-widget:$mediax",
-                "androidx.media2:media2-player:$mediax"
+                "androidx.media2:media2-player:$mediax",
+
+                // Glide
+                "com.github.bumptech.glide:glide:$glide"
         ]
 
         arch_libraries = [
@@ -66,6 +71,10 @@ buildscript {
         android_test_libraries = [
                 "androidx.test.ext:junit:$android_junit_version",
                 "androidx.test.espresso:espresso-core:$espresso_version"
+        ]
+
+        annotation = [
+                "com.github.bumptech.glide:compiler:$glide"
         ]
     }
     repositories {

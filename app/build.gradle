@@ -46,6 +46,8 @@ dependencies {
 
     implementation arch_libraries
 
+    annotationProcessor annotation
+
     testImplementation test_libraries
     androidTestImplementation android_test_libraries
 }
