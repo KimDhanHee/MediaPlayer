@@ -1,3 +1,13 @@
 <resources>
   <string name="app_name">MediaPlayer</string>
+  
+  <string name="playlist_root_ringtone">Ringtone</string>
+  <string name="playlist_root_app">App</string>
+  <string name="playlist_root_user">Music</string>
+  
+  <string name="app_media_uri_format" translatable="false">android.resource://%s/raw/%s</string>
+  
+  <string-array name="playlist_app_title">
+    <item>still_need_you</item>
+  </string-array>
 </resources>

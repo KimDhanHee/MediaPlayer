@@ -24,6 +24,8 @@ buildscript {
 
         def glide = '4.11.0'
 
+        def permission_dispatcher = '4.7.0'
+
         def junit_version = '4.12'
 
         def android_junit_version = '1.1.1'
@@ -50,7 +52,10 @@ buildscript {
                 "androidx.media2:media2-player:$mediax",
 
                 // Glide
-                "com.github.bumptech.glide:glide:$glide"
+                "com.github.bumptech.glide:glide:$glide",
+
+                // Permission Dispatcher
+                "org.permissionsdispatcher:permissionsdispatcher:$permission_dispatcher"
         ]
 
         arch_libraries = [
@@ -74,7 +79,12 @@ buildscript {
         ]
 
         annotation = [
-                "com.github.bumptech.glide:compiler:$glide"
+                "com.github.bumptech.glide:compiler:$glide",
+                "org.permissionsdispatcher:permissionsdispatcher-processor:$permission_dispatcher"
+        ]
+
+        kapt_libraries = [
+                "org.permissionsdispatcher:permissionsdispatcher-processor:$permission_dispatcher"
         ]
     }
     repositories {

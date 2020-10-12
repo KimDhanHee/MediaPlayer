@@ -1,13 +1,10 @@
 package com.example.mediaplayer.media.service
 
-import android.util.Log
 import androidx.media2.player.MediaPlayer
 import androidx.media2.session.*
 import java.util.concurrent.Executors
 
 class MediaService : MediaLibraryService() {
-  private val TAG = "MediaService"
-
   private var mediaSession: MediaLibrarySession? = null
   private val mediaPlayer: MediaPlayer by lazy { MediaPlayer(this) }
 
@@ -53,19 +50,17 @@ class MediaService : MediaLibraryService() {
           page: Int,
           pageSize: Int,
           params: LibraryParams?
-        ): LibraryResult {
-          Log.d(TAG, "Service onGetChildren() : ${parentId}")
-          return LibraryResult(LibraryResult.RESULT_SUCCESS, MediaLibrary.playList(applicationContext), null)
-        }
+        ): LibraryResult = LibraryResult(
+          LibraryResult.RESULT_SUCCESS, MediaLibrary.playList(applicationContext, parentId), null
+        )
       }).build()
   }
 
-  override fun onGetSession(controllerInfo: MediaSession.ControllerInfo): MediaLibrarySession? {
-    return mediaSession
-  }
+  override fun onGetSession(controllerInfo: MediaSession.ControllerInfo): MediaLibrarySession? =
+    mediaSession
 
   override fun onDestroy() {
-    super.onDestroy()
     mediaSession?.close()
+    super.onDestroy()
   }
 }
